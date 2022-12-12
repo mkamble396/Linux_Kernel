@@ -13,11 +13,12 @@ void* routine()
 }
 
 int main(int c, char*v[])
-{
+{       int retval;
     pthread_t t1,t2,t3;
     pthread_create(&t1,NULL,&routine,NULL);
     pthread_create(&t2,NULL,&routine,NULL);
     pthread_create(&t3,NULL,&routine,NULL);
+   pthread_exit(&t1);
     pthread_join(t1,NULL);
     pthread_join(t2,NULL);
     pthread_join(t3,NULL);
