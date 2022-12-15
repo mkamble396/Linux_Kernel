@@ -5,12 +5,13 @@
 
 int id=0;
 int i=0;
-pthread_mutex_t mtx;
+pthread_mutex_t mtx;//mutex initialization
 
 void* routine()
 {
-    pthread_mutex_lock(&mtx);
+    pthread_mutex_lock(&mtx);//mutex lock for synchronization to avoid the race condition 
     for(i;i<1000000;i++,id++);
+    
     printf("id=%d\n",id);
     pthread_mutex_unlock(&mtx);
 
@@ -33,10 +34,17 @@ int main(int c, char*v[])
 
     //    pthread_detach(pthread_self());
 
-    if(pthread_join(t1,NULL)!=0)
+  if(pthread_join(t1,NULL)!=0)
         perror("Exit Fail\n");
+      
+  
 
-    pthread_join(t2,NULL);
+
+//    pthread_detach(pthread_self());
+//  pthread_join(t2,NULL);
+        if(i==0)
+            pthread_cancel(t2);
+
 
     pthread_join(t3,NULL);
     return 0;
