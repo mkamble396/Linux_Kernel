@@ -4,6 +4,7 @@
 #include<unistd.h>
 #include<stdio.h>
 #include<stdlib.h>
+#include<sys/file.h>
 int main(int argc,char*argv[])
 {
         if(argc!=2){ //checks if two arguments are present
@@ -18,7 +19,7 @@ int f1,count;
 char buffer[2048]; //characer buffer to store the bytes
 
 f1=open(argv[1], O_RDONLY);
-        
+flock(f1,LOCK_EX);        
         if(f1==-1)
         {
         printf("cannot open file");
