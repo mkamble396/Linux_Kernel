@@ -25,16 +25,14 @@ int main(int argc, char const* argv[])
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(PORT);
 
-    
-    if (bind(server_fd, (struct sockaddr*)&address,
-             sizeof(address))
-        < 0) {
+//The bind() system call binds a socket to an address. Usually, a server employs this call to bind its socket to a well-known address so that clients can locate the socket.
+    if (bind(server_fd, (struct sockaddr*)&address sizeof(address)) < 0) {
         printf("\n bind failed \n");
         return -1;
     }
    // printf("Hi \n");
     
-    //for listening from client
+    //for listening from client The listen() system call allows a stream socket to accept incoming connections from other sockets.
     if (listen(server_fd, 3) < 0) {
         printf("\n listen \n");
         return -1;
@@ -43,7 +41,7 @@ int main(int argc, char const* argv[])
     
     // printf("Hi \n");
 
-    //for accepting by creating a new socket to communicate with client
+    //for accepting by creating a new socket to communicate with client  The accept() system call accepts a connection from a peer application on a listening stream socket, and optionally returns the address of the peer socket.
 
     new_socket= accept(server_fd, (struct sockaddr*)&address,(socklen_t*)&addrlen);
     if (new_socket<0){

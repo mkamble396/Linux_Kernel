@@ -1,0 +1,1 @@
+cmd_/home/mkamble/Linux_Kernel/Day_9/Memory.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/mkamble/Linux_Kernel/Day_9/Memory.ko /home/mkamble/Linux_Kernel/Day_9/Memory.o /home/mkamble/Linux_Kernel/Day_9/Memory.mod.o;  true

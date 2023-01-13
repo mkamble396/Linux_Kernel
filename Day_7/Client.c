@@ -32,7 +32,7 @@ int main(int argc, char const* argv[])
   // printf("Hi \n");
 
     
-    if ((client_fd = connect(sock, (struct sockaddr*)&serv_addr,sizeof(serv_addr))) < 0)
+    if ((client_fd = connect(sock, (struct sockaddr*)&serv_addr,sizeof(serv_addr))) < 0) //The connect() system call establishes a connection with another socket.
     {
         printf("\nConnection Failed \n");
         return -1;
