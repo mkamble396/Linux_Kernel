@@ -1,0 +1,1 @@
+cmd_/home/mkamble/Linux_Kernel/Day_9/Module.symvers := sed 's/\.ko$$/\.o/' /home/mkamble/Linux_Kernel/Day_9/modules.order | scripts/mod/modpost -m -a  -o /home/mkamble/Linux_Kernel/Day_9/Module.symvers -e -i Module.symvers   -T -

@@ -1,0 +1,8 @@
+# Day 4 Lab Assignments-1
+
+1. What is the difference between a Task, Process and thread?
+2. How threads communicate with each other?
+3. Do you have any idea about thread safe functions? How can you implement it?  
+#implement a thread safe function
+4. WAP create two threads using pthreads and print even no and odd no alternatively.(if required use mutex)
+
