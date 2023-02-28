@@ -50,7 +50,7 @@ int main(int argc, char const* argv[])
     while(1){
 	    bzero(buffer,1024);
 	   c=read(new_socket,buffer,1024);
-	   for(int i=0;buffer[i]<=c;i++)
+	   for(int i=0;buffer[i];i++)
 
 	{	
 		if(buffer[i]>='a' && buffer[i]<='z')
